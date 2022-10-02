@@ -23,9 +23,9 @@ public class Scenario {
 		panoramix.booster(asterix);
 		asterix.parler("Bonjour");
 		minus.parler("UN GAU... UN GAUGAU...");
-		asterix.frapper(minus);
-		asterix.frapper(minus);
-		asterix.frapper(minus);
+		while (minus.getForce() > 0) {
+			asterix.frapper(minus);
+		}
 	}
 
-}
+};

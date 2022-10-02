@@ -1,7 +1,7 @@
 package personnages;
 
 public class Gaulois {
-	public static String nom;
+	private static String nom;
 	private static int force;
 	private int effetPotion = 1;
 	
@@ -38,14 +38,4 @@ public class Gaulois {
 		parler("Merci Druide, je sens que ma force est " + effetPotion + " fois décuplée.");
 	}
 	
-	
-	public static void main(String[] args) {
-		//Gaulois asterix = new Gaulois(nom = "Astérix", force = 8);
-		//asterix.boirePotion(6);
-		//Romain minus = new Romain(nom = "Minus", force = 6);
-		//System.out.println(asterix);
-		//asterix.prendreParole();
-		//asterix.parler("Bonjour à tous");
-		//asterix.frapper(minus);
-	}
 };

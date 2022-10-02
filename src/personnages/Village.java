@@ -17,4 +17,4 @@ public class Village {
 		this.chef = chef;
 	}
 	
-}
+};
