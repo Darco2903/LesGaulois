@@ -3,6 +3,8 @@ package personnages;
 public class Romain {
 	private String nom;
 	private int force;
+	private Equipement[] equipements = new Equipement[2];
+	private int nbEquipement = 0;
 
 	public Romain(String nom, int force) {
 		this.nom = nom;
@@ -27,6 +29,10 @@ public class Romain {
 		return "Le romain " + nom + " : ";
 	}
 	
+	private void afficherInfo(String text) {
+		System.out.println("Le soldat " + nom + " " + text);
+	}
+		
 	public void recevoirCoup(int forceCoup) {
 		if (force <= 0) throw new AssertionError("la force d'un Romain est positive");
 		int forceAssert = force;
@@ -37,9 +43,31 @@ public class Romain {
 		} else {
 			parler("J'abandonne...");
 		}
+		
+	}
+	
+	private void sEquiper(Equipement equipement) {
+		
+		switch (nbEquipement) {
+			case 2: 
+				afficherInfo("est déjà bien protégé !");
+				break;
+				
+			case 1:
+				
+				break;
+			
+			case 0:
+				
+				
+			default:
+				throw new IllegalArgumentException("Erreur nombre équipement: " + nbEquipement);
+		}
 	}
 	
 	public static void main(String[] args) {
-		Romain minus = new Romain("minus", 1);
-	}
+		//Romain minus = new Romain("minus", 1);
+		System.out.println(Equipement.BOUCLIER);
+		System.out.println(Equipement.CASQUE);
+		}
 };
