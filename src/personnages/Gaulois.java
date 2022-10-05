@@ -1,8 +1,8 @@
 package personnages;
 
 public class Gaulois {
-	private static String nom;
-	private static int force;
+	private String nom;
+	private int force;
 	private int effetPotion = 1;
 	
 	public Gaulois(String nom, int force) {

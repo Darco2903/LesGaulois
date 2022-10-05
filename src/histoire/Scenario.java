@@ -5,16 +5,12 @@ import personnages.Romain;
 import personnages.Druide;
 
 public class Scenario {
-	static String nom;
-	static int force;
-	static int effetPotionMax;
-	static int effetPotionMin;
 	
 	public static void main(String[] args) {
-		Druide panoramix = new Druide(nom = "Panoramix", effetPotionMin = 5, effetPotionMax = 10);
-		Gaulois asterix = new Gaulois(nom = "Astérix", force = 8);
-		Gaulois obelix = new Gaulois(nom = "Obélix", force = 8);
-		Romain minus = new Romain(nom = "Minus", force = 6);
+		Druide panoramix = new Druide("Panoramix", 5, 10);
+		Gaulois asterix = new Gaulois("Astérix", 8);
+		Gaulois obelix = new Gaulois("Obélix", 8);
+		Romain minus = new Romain("Minus", 6);
 		
 		panoramix.parler("Je vais aller préparer une petite potion");
 		panoramix.preparerPotion();

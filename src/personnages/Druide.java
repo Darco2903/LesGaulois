@@ -3,9 +3,9 @@ package personnages;
 import java.util.Random;
 
 public class Druide {
-	private static String nom;
-	private static int effetPotionMin;
-	private static int effetPotionMax;
+	private String nom;
+	private int effetPotionMin;
+	private int effetPotionMax;
 	private int forcePotion = 1;
 	
 	public Druide(String nom, int effetPotionMin, int effetPotionMax) {
