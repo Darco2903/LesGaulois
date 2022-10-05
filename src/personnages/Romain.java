@@ -46,6 +46,12 @@ public class Romain {
 		
 	}
 	
+	private void ajouterEquipement(Equipement equipement) {
+		equipements[nbEquipement] = equipement;
+		nbEquipement++ ;
+		afficherInfo("s'équipe avec un " + equipement);
+	}
+	
 	private void sEquiper(Equipement equipement) {
 		
 		switch (nbEquipement) {
@@ -54,11 +60,13 @@ public class Romain {
 				break;
 				
 			case 1:
-				
+				if (equipements[0] != equipement) ajouterEquipement(equipement);
+				else afficherInfo("possède déjà un " + equipement + " !");
 				break;
 			
 			case 0:
-				
+				ajouterEquipement(equipement);
+				break;
 				
 			default:
 				throw new IllegalArgumentException("Erreur nombre équipement: " + nbEquipement);
@@ -66,8 +74,12 @@ public class Romain {
 	}
 	
 	public static void main(String[] args) {
-		//Romain minus = new Romain("minus", 1);
-		System.out.println(Equipement.BOUCLIER);
-		System.out.println(Equipement.CASQUE);
+		Romain minus = new Romain("minus", 1);
+		//System.out.println(Equipement.BOUCLIER);
+		//System.out.println(Equipement.CASQUE);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.BOUCLIER);
+		minus.sEquiper(Equipement.CASQUE);
 		}
 };
