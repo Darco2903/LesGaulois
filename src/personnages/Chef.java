@@ -3,7 +3,6 @@ package personnages;
 public class Chef {
 	private String nom;
 	private int force;
-	private int effetPotion = 1;
 	private Village village;
 	
 	public Chef(String nom, int force, Village village) {
@@ -18,8 +17,8 @@ public class Chef {
 	
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "« " + texte + "»");
-
 	}
+	
 	private String prendreParole() {
 		return "Le chef " + nom + " du village " + village.getNom() + " : ";
 	}
@@ -29,4 +28,4 @@ public class Chef {
 		romain.recevoirCoup(force / 3);
 	}
 	
-};
+}

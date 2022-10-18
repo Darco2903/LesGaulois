@@ -29,22 +29,19 @@ public class Druide {
 	
 	public void preparerPotion() {
 		Random random = new Random();
-		int forcePotion = random.nextInt((effetPotionMax - effetPotionMin) + 1);
-		forcePotion += effetPotionMin;
+		int randomForce = random.nextInt((effetPotionMax - effetPotionMin) + 1);
+		randomForce += effetPotionMin;
+		forcePotion = randomForce;
 		
-		if (forcePotion > 7) {
-			parler("J'ai préparé une super potion de force " + forcePotion);			
-		} else {
-			parler("Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force " + forcePotion);
-		}
+		if (forcePotion > 7) parler("J'ai préparé une super potion de force " + forcePotion);			
+		else parler("Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force " + forcePotion);
+		
 	}
 	
 	public void booster(Gaulois gaulois) {
-		if (gaulois.getNom() == "Obélix") {
-			parler("Non, Obélix !... Tu n’auras pas de potion magique !");
-		} else {
-			gaulois.boirePotion(forcePotion);
-		}
+		String nomGaulois = gaulois.getNom();
+		if (nomGaulois.equals("Obélix")) parler("Non, Obélix !... Tu n’auras pas de potion magique !");
+		else gaulois.boirePotion(forcePotion);
 	}	
 	
 };

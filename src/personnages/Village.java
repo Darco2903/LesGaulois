@@ -48,9 +48,8 @@ public class Village {
 		//	System.out.println(gaulois); print "null"
 		
 		Gaulois obelix = new Gaulois("Obélix", 25);
-		village.ajouterHabitant(obelix);
-		
+		village.ajouterHabitant(obelix);		
 		village.afficherVillageois();
 		
 	}
-};
+}
