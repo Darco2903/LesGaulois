@@ -110,7 +110,7 @@ public class Romain {
 		}
 		parler(texte);
 		if (forceCoup > resistanceEquipement) forceCoup -= resistanceEquipement;
-		else forceCoup = 0;
+		else forceCoup = 1;
 		return forceCoup;
 	}
 	

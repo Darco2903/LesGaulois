@@ -9,43 +9,34 @@ import personnages.Musee;
 public class Scenario {
 	
 	public static void main(String[] args) {
-		Druide panoramix = new Druide("Panoramix", 5, 10);
+		Druide druide = new Druide("Panoramix", 5, 10);
+		druide.parler("Je vais aller préparer une petite potion...");
+		druide.preparerPotion();
+		Gaulois obelix = new Gaulois("Obélix", 25);
 		Gaulois asterix = new Gaulois("Astérix", 8);
-		Gaulois obelix = new Gaulois("Obélix", 8);
-		Romain minus = new Romain("Minus", 6);
-//		Romain m1 = new Romain("Mus", 2);
-//		Romain m2 = new Romain("Mis", 1);
-//		Romain m3 = new Romain("Mas", 1);
-		
-		panoramix.parler("Je vais aller préparer une petite potion");
-		panoramix.preparerPotion();
-		panoramix.booster(obelix);
-		obelix.parler("Par Bélénos, ce n'est pas juste!");
-		panoramix.booster(asterix);
+		druide.booster(obelix);
+		obelix.parler("Par Bélénos, ce n'est pas juste !");
+		druide.booster(asterix);
 		asterix.parler("Bonjour");
-		minus.sEquiper(Equipement.CASQUE);
+		Romain minus = new Romain("Minus", 6);
+		Romain milexcus = new Romain("Milexcus", 8);
 		minus.sEquiper(Equipement.BOUCLIER);
-//		m1.sEquiper(Equipement.CASQUE);
-//		m2.sEquiper(Equipement.BOUCLIER);
-//		m3.sEquiper(Equipement.CASQUE);
-//		m3.sEquiper(Equipement.BOUCLIER);
-//		minus.parler("UN GAU... UN GAUGAU...");
-//		while (minus.getForce() > 0) {
-//			asterix.frapper(minus);
-//		}
-//		while (m1.getForce() > 0) {
-//			asterix.frapper(m1);
-//		}
-//		while (m3.getForce() > 0) {
-//			asterix.frapper(m3);
-//		}
-//		while (m2.getForce() > 0) {
-//			asterix.frapper(m2);
-//		}
+		minus.sEquiper(Equipement.CASQUE);
+		milexcus.sEquiper(Equipement.CASQUE);
+		minus.parler("UN GAU... UN GAUGAU...");
+		do {
+			asterix.frapper(minus);
+		} while (minus.getForce() > 0);
+		milexcus.parler("UN GAU... UN GAUGAU...");
+		do {
+			asterix.frapper(milexcus);
+		} while (milexcus.getForce() > 0);
+		
+//		Partie a decommenter
 		
 //		Musee musee = new Musee();
 //		asterix.faireUneDonnation(musee);
-//		musee.extraireInstructionsCaml();
+
 	}
 
 }
